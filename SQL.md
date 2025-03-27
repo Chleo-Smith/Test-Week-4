@@ -54,4 +54,11 @@ ORDER BY artworks.title asc;
 
 3.  Write a query to display the average price of artworks for each genre, only including genres where the average price is above 800000, sorted by genre name.
 
+```sql
+Select * FROM (SELECT AVG(price) AS average_price
+FROM artworks
+GROUP BY genre)
+WHERE average_price > 800000;
+'''
 4.  Write a query to list all artists who do not have any artworks in the artworks table.
+```
